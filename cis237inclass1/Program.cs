@@ -15,7 +15,8 @@ namespace cis237inclass1
         {
 
             // Make a new instance of the UserInterface class
-            UserInterface ui = new UserInterface();
+            // just commented this to use the static one instead
+            //UserInterface ui = new UserInterface();
 
 
             // new instance of employee class
@@ -42,7 +43,7 @@ namespace cis237inclass1
             // he array to store the read in records to.
             csvProcessor.ImportCSV(pathToCSV, employees);
 
-            int userInput = ui.GetUserInput();
+            int userInput = StaticUserInterface.GetUserInput();
             while (userInput != 2)
             {
                 if(userInput == 1)
@@ -66,10 +67,10 @@ namespace cis237inclass1
                             break;
                         }
                     }
-                    ui.Ouput(outputString);
+                    StaticUserInterface.Ouput(outputString);
                 }
 
-                userInput = ui.GetUserInput();
+                userInput = StaticUserInterface.GetUserInput();
             }
             // Console.WriteLine(myEmployee.FirstAndLastName());
         }
