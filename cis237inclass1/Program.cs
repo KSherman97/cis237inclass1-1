@@ -29,9 +29,18 @@ namespace cis237inclass1
             Employee[] employees = new Employee[10];
 
             // let's add some employees to our array
-            employees[0] = new Employee("David", "barnes", 150.00m);
-            employees[1] = new Employee("Kyle", "Sherman", 1000.00m);
-            employees[2] = new Employee("3CPO", "", 10.00m);
+            //employees[0] = new Employee("David", "barnes", 150.00m);
+            //employees[1] = new Employee("Kyle", "Sherman", 1000.00m);
+            //employees[2] = new Employee("3CPO", "", 10.00m);
+
+            // make the string for the path to the csv file
+            string pathToCSV = "../employees.csv";
+
+            // instantiate the cv Processor
+            CSVProcessor csvProcessor = new CSVProcessor();
+            // call the importCSV method sending over the path and
+            // he array to store the read in records to.
+            csvProcessor.ImportCSV(pathToCSV, employees);
 
             int userInput = ui.GetUserInput();
             while (userInput != 2)
@@ -53,12 +62,13 @@ namespace cis237inclass1
                         }
                         else
                         {
-                            Console.WriteLine("There is nothing else here");
+                            //Console.WriteLine("There is nothing else here");
                             break;
                         }
                     }
                     ui.Ouput(outputString);
                 }
+
                 userInput = ui.GetUserInput();
             }
             // Console.WriteLine(myEmployee.FirstAndLastName());
